@@ -1,0 +1,26 @@
+/* Custom CSS for bank official login */
+body {
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #004b8e;
+    border-color: #004b8e;
+}
+
+.btn-primary:hover {
+    background-color: #00396d;
+    border-color: #00396d;
+}
