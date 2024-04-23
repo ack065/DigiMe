@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="CSS/MainCSS.css">
+</head>
+<body>
+<div class="container">
+    <!-- User Info Section -->
+    <div class="userinfo">
+        <h2>Welcome, [Username]</h2>
+        <button>Personal Data</button>
+        <button>Notifications</button>
+        <button>Logout</button>
+        <p>Would you like to see a tutorial? <a href="tutorial.html">Click here</a></p>
+    </div>
+
+    <!-- Main Grid Section -->
+    <div class="main">
+        <div>
+            <h3>Main Page</h3>
+            <select>
+                <option value="personal-data">Personal Data</option>
+                <option value="uploaded-pictures">Uploaded Pictures</option>
+                <option value="uploaded-documents">Uploaded Documents</option>
+                <!-- Add other options as needed -->
+            </select>
+            <button>Upload Data</button>
+            <button>History</button>
+        </div>
+        <!-- Add more grid items as needed -->
+    </div>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <h3>Storage & Notifications Preview</h3>
+        <div class="notification">
+            <h4>Storage Used</h4>
+            <!-- Display storage information here -->
+        </div>
+        <div class="notification">
+            <h4>Recent Notifications</h4>
+            <!-- Display recent notifications here -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
