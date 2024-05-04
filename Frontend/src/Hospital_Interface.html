@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Interface</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/hospitalInterface.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- Hospital Navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Hospital Interface</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#biometricsModal">Check Biometrics</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Biometrics Modal -->
+<div class="modal fade" id="biometricsModal" tabindex="-1" role="dialog" aria-labelledby="biometricsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="biometricsModalLabel">Biometrics Verification</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Biometrics verification form -->
+                <form id="biometricsForm">
+                    <div class="form-group">
+                        <label for="biometricsInput">Enter Patient Biometrics</label>
+                        <input type="text" class="form-control" id="biometricsInput" placeholder="Enter biometrics here" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Patient Information Modal -->
+<div class="modal fade" id="patientInfoModal" tabindex="-1" role="dialog" aria-labelledby="patientInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="patientInfoModalLabel">Patient Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="patientInfoBody">
+                <!-- Patient information will be displayed here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for handling form submission and displaying patient information -->
+<script>
+    $(document).ready(function () {
+        // Submit biometrics form
+        $('#biometricsForm').submit(function (event) {
+            event.preventDefault(); // Prevent default form submission
+            var biometrics = $('#biometricsInput').val(); // Get biometrics input value
+            // Mocking biometrics verification (replace with actual verification logic)
+            var verified = biometrics === 'biometrics_example';
+            if (verified) {
+                // Mock patient information (replace with actual data retrieval logic)
+                var patientInfo = {
+                    name: 'Jane Doe',
+                    age: '30',
+                    diagnosis: 'Flu',
+                    // Add more fields as needed
+                };
+                // Display patient information in the modal
+                $('#patientInfoBody').html(`
+                    <p><strong>Name:</strong> ${patientInfo.name}</p>
+                    <p><strong>Age:</strong> ${patientInfo.age}</p>
+                    <p><strong>Diagnosis:</strong> ${patientInfo.diagnosis}</p>
+                    <!-- Add more information as needed -->
+                `);
+                // Show patient information modal
+                $('#patientInfoModal').modal('show');
+            } else {
+                alert('Biometrics verification failed. Please try again.');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
